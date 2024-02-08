@@ -4,6 +4,11 @@ const { Sequelize } = require('sequelize')
 const sequelize = new Sequelize(
   'postgres://fakeurl', // TODO
   {
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT,
     dialectOptions: {
       ssl: {
         require: true,
